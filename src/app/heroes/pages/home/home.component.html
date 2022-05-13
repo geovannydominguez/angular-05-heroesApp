@@ -1,0 +1,53 @@
+<!-- Otro Ruter Outlet (el 1ero está en app.component.html) para mostrar las rutas hijas -->
+<!-- <router-outlet></router-outlet> -->
+
+<!-- De Angulr Material  -->
+<mat-sidenav-container fullscreen>
+    
+    <!-- #sidenav es una referencia local -->
+    <mat-sidenav #sidenav mode="push">
+        
+        <mat-toolbar color="primary">
+            <span>Menú</span>
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <!-- Ver los nombres de los íconos en Material Icons -->
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+                <span>Listado de Héroes</span>
+                <mat-icon mat-list-icon>label</mat-icon>
+            </a>
+
+            <a routerLink="./agregar" mat-list-item (click)="sidenav.toggle()">
+                <span>Agregar Héroe</span>
+                <mat-icon mat-list-icon>add</mat-icon>
+            </a>
+
+            <a routerLink="./buscar" mat-list-item (click)="sidenav.toggle()">
+                <span>Buscar Héroe</span>
+                <mat-icon mat-list-icon>search</mat-icon>
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-toolbar>
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <!-- Ver los nombres de los íconos en Material Icons -->
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <span>{{ auth.usuario }}</span>
+        <button mat-button (click)="logout()">Logout</button>
+    </mat-toolbar>
+
+    <div class="container">
+    </div>
+
+    <router-outlet></router-outlet>
+
+</mat-sidenav-container>

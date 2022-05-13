@@ -1,0 +1,23 @@
+<h1>Listado de Héroes</h1>
+<mat-divider></mat-divider>
+<br>
+
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"     
+     fxLayoutGap="20px">
+
+    <!-- Por default cada mat-card con 20% del espacio horizontal.
+         En pantallas grandes, cada mat-card con 15% del espacio horizontal.
+         En pantallas pequeñas, cada mat-card con 30% del espacio horizontal
+     -->
+    <div fxFlex="20"
+         fxFlex.lg="15"
+         fxFlex.sm="30"
+         *ngFor="let heroe of heroes">
+
+        <app-heroe-tarjeta [heroe]="heroe" ></app-heroe-tarjeta>
+    
+    </div>
+
+</div>
